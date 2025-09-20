@@ -9,7 +9,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = Metalmithextra.MODID,bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = Metalmithextra.MODID,bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MetaDataHandler {
 
     @SubscribeEvent
@@ -22,6 +22,12 @@ public class MetaDataHandler {
                 // 告诉生成器仅在生成服务端资源时运行
                 event.includeServer(),
                new ModRecipeProvider(packOutput)
+        );
+        event.getGenerator().addProvider(
+                // 告诉生成器仅在生成客户端资源时运行
+                event.includeClient(),
+                // 美式英语的本地化
+                new ModZHCNProvider(packOutput)
         );
     }
 }

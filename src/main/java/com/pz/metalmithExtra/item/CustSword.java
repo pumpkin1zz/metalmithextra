@@ -12,7 +12,7 @@ import net.minecraftforge.common.ForgeMod;
 
 import java.util.UUID;
 
-public class Broadsword extends SwordItem {
+public class CustSword extends SwordItem {
 
 
     protected static final UUID ENTITY_REACH_UUID = UUID.fromString("CFE90BF1-6AC3-4130-AA2D-AF1BB7406523");
@@ -21,7 +21,7 @@ public class Broadsword extends SwordItem {
     private final float attackDamage;
 
 
-    public Broadsword(Tier p_43269_, int p_43270_, float p_43271_, float reachDistance, Properties p_43272_) {
+    public CustSword(Tier p_43269_, int p_43270_, float p_43271_, float reachDistance, Properties p_43272_) {
         super(p_43269_, p_43270_, p_43271_, p_43272_);
         this.attackDamage = (float)p_43270_ + p_43269_.getAttackDamageBonus();
         this.reachDistance = reachDistance;
