@@ -6,6 +6,7 @@ import com.pz.metalmithExtra.item.armor.CustArmorMaterial;
 import metalmith.items.ToolsRegistration;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -15,12 +16,12 @@ public class ModItem {
 
     public static final RegistryObject<Item> FLAM_BROADSWORD = ITEMS.register(
             "flam_iron_broadsword",
-            ()-> new CustSword(ToolsRegistration.FLAM_IRON_TIER, 7, -2.7F,0.5F ,new Item.Properties()));
+            ()-> new SwordItem(ToolsRegistration.FLAM_IRON_TIER, 7, -2.7F,new Item.Properties()));
 
 
     public static final RegistryObject<Item> FLAM_SPEAR = ITEMS.register(
-            "flam_spear",
-            () -> new CustSword(ToolsRegistration.FLAM_IRON_TIER,5,-2.6F,0.75F,new Item.Properties())
+            "flam_iron_spear",
+            () -> new SwordItem(ToolsRegistration.FLAM_IRON_TIER,5,-2.6F,new Item.Properties())
     );
 
     public static final RegistryObject<Item> NUGGET_FLAM_HELMET = ITEMS.register(
