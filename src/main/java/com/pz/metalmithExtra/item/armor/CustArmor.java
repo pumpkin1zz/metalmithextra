@@ -3,6 +3,7 @@ package com.pz.metalmithExtra.item.armor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;
@@ -11,6 +12,7 @@ import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.Map;
@@ -27,18 +29,20 @@ public class CustArmor extends ArmorItem {
         consumer.accept(new IClientItemExtensions() {
             @Override
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                return new HumanoidModel<>(new ModelPart(Collections.emptyList(),
+                HumanoidModel<LivingEntity> livingEntityHumanoidModel = new HumanoidModel<>(new ModelPart(Collections.emptyList(),
                         Map.of(
-                                "Head",new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).Head,
-                                "Body",new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).Body,
-                                "LeftArm",new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).LeftArm,
-                                "LeftLeg",new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).LeftLeg,
-                                "RightArm",new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).RightArm,
-                                "RightLeg",new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).RightLeg
+                                "head", new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).head,
+                                "body", new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).body,
+                                "left_arm", new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).left_arm,
+                                "left_leg", new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).left_leg,
+                                "right_arm", new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).right_arm,
+                                "right_leg", new FlamIronArmorModel<>(Minecraft.getInstance().getEntityModels().bakeLayer(FlamIronArmorModel.LAYER_LOCATION)).right_leg,
+                                "hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())
 
                         )
                 ));
 
+                return livingEntityHumanoidModel;
             }
         });
     }
