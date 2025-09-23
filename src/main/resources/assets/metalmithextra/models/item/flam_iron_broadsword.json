@@ -632,6 +632,7 @@
 			}
 		}
 	],
+	"gui_light": "front",
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [-159.74, 84.57, 161.12],
@@ -670,6 +671,7 @@
 			"scale": [0.59766, 0.62305, 1]
 		}
 	},
+
 	"groups": [
 		{
 			"name": "group",

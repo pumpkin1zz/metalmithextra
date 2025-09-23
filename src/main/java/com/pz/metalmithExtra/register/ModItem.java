@@ -2,6 +2,7 @@ package com.pz.metalmithExtra.register;
 
 import com.pz.metalmithExtra.Metalmithextra;
 import com.pz.metalmithExtra.item.CustSword;
+import com.pz.metalmithExtra.item.armor.CustArmor;
 import com.pz.metalmithExtra.item.armor.CustArmorMaterial;
 import metalmith.items.ToolsRegistration;
 import net.minecraft.world.item.ArmorItem;
@@ -26,7 +27,7 @@ public class ModItem {
 
     public static final RegistryObject<Item> NUGGET_FLAM_HELMET = ITEMS.register(
       "nugget_flam_helmet",
-            () -> new ArmorItem(CustArmorMaterial.FLAM_IRON_NUGGET, ArmorItem.Type.HELMET,new Item.Properties())
+            () -> new CustArmor( ArmorItem.Type.HELMET,new Item.Properties())
     );
     public static final RegistryObject<Item> NUGGET_FLAM_CHESTPLATE = ITEMS.register(
       "nugget_flam_chestplate",
